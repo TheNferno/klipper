@@ -78,7 +78,7 @@ class Fan:
         tachometer_status = self.tachometer.get_status(eventtime)
         rpm = tachometer_status['rpm']
         if self.last_fan_value == 1.0 and rpm == 0.0:
-            logging.info("++Exception in Fan，invoke_shutdown\n")
+            logging.info("++Exception in Fan, invoke_shutdown\n")
             self.printer.invoke_shutdown("Exception in Fan")
 
     def get_status(self, eventtime):
