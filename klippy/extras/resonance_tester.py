@@ -120,7 +120,7 @@ class ResonanceTester:
     def __init__(self, config):
         self.printer = config.get_printer()
         self.move_speed = config.getfloat('move_speed', 50., above=0.)
-        self.recommended_params = []  # 存储推荐参数
+        self.recommended_params = []  # Store recommended parameters
         self.test = VibrationPulseTest(config)
         if not config.get('accel_chip_x', None):
             self.accel_chip_names = [('xy', config.get('accel_chip').strip())]
@@ -314,7 +314,7 @@ class ResonanceTester:
             if test == '1':
                 self.modify_cfg_value(axis_name + "_freq", str(round(best_shaper.freq, 2)))
                 self.modify_cfg_value("show_freq", '1')
-                # self.recommended_params.append((axis_name, best_shaper.freq))  # 记录推荐参数
+                # self.recommended_params.append((axis_name, best_shaper.freq))  # Store recommended parameters
             if input_shaper is not None:
                 helper.apply_params(input_shaper, axis_name,
                                     best_shaper.name, best_shaper.freq)
